@@ -1,0 +1,53 @@
+{% extends "__base__.html" %}
+{% block title %}Dodaj przepis do planu{% endblock %}
+{% block content %}
+<div class="dashboard-content border-dashed p-3 m-4 view-height" xmlns="http://www.w3.org/1999/html">
+    <form method="post">
+
+        <div class="row border-bottom border-3 p-1 m-1">
+            <div class="col">
+                <h3 class="color-header text-uppercase">Dodaj przepis do planu</h3>
+            </div>
+            <div class="col d-flex justify-content-end mb-2">
+                <button type="submit" class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">Zapisz</button>
+            </div>
+        </div>
+
+        <table class="table borderless">
+            <tbody>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">{{ form.plan_id.label_tag }}</th>
+                    <td class="col-7">
+                        {{ form.plan_id }}
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">{{ form.meal_name.label_tag }}</th>
+                    <td class="col-7">
+                        {{ form.meal_name }}
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">{{ form.order.label_tag }}</th>
+                    <td class="col-7">
+                        {{ form.order }}
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">{{ form.recipe_id.label_tag }}</th>
+                    <td class="col-7">
+                        {{ form.recipe_id }}
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">{{ form.day_name_id.label_tag }}</th>
+                    <td class="col-7">
+                        {{ form.day_name_id }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {% csrf_token %}
+    </form>
+</div>
+{% endblock content %}
